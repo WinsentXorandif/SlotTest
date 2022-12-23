@@ -2,7 +2,6 @@
 
 Timer::Timer() 
 {
-    //Initialize the variables
     mStartTicks = 0;
     mPausedTicks = 0;
 
