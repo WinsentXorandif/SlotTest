@@ -40,11 +40,10 @@ void Button::Update()
 
 }
 
-void Button::Handle_events(bool& isRunning)
+bool Button::Handle_events(bool& isRunning)
 {
-
     SDL_Event event;
-    //Poll all the events that have occured 
+
     SDL_PollEvent(&event);
 
     switch (event.type)
@@ -57,6 +56,7 @@ void Button::Handle_events(bool& isRunning)
         break;
     }
 
+	bool rezult = false;
 
     //The mouse offsets
     int x = 0, y = 0;
@@ -75,10 +75,14 @@ void Button::Handle_events(bool& isRunning)
             if ((x > xPos) && (x < xPos + objectWidth) && (y > yPos) && (y < yPos + objectHeight))
             {
 				printf("Mouse!!!");
+				rezult = true;
                 
             }
         }
     }
+
+	return rezult;
+
 }
 
 

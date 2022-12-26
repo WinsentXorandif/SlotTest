@@ -28,7 +28,7 @@ public:
 
 	void AnimateObjects(bool isToAnimate);
 
-	void UpdateMouse(bool& isRunning);
+	bool UpdateMouse(bool& isRunning);
 
 	void UpdateObjects();
 

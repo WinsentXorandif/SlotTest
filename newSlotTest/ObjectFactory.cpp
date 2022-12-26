@@ -53,9 +53,9 @@ void ObjectFactory::AnimateObjects(bool isAnimate)
 }
 
 
-void ObjectFactory::UpdateMouse(bool& isRunning)
+bool ObjectFactory::UpdateMouse(bool& isRunning)
 {
-    button->Handle_events(isRunning);
+    return button->Handle_events(isRunning);
 }
 
 

@@ -20,6 +20,11 @@ void CasinoSlot::loadGameObjects(SDL_Renderer* renderer, TTF_Font* textFont)
 
 void CasinoSlot::startGame() 
 {
+
+	CreditsInCounter = 10;
+
+	printf("Start Game!");
+
 	switch (currState)
 	{
 	case Stopped:
@@ -66,7 +71,10 @@ void CasinoSlot::startGame()
 
 void CasinoSlot::UpdateInput(bool& isRunning)
 {
-	objectFactory->UpdateMouse(isRunning);
+	if (objectFactory->UpdateMouse(isRunning)) 
+	{
+		startGame();
+	}
 }
 
 
