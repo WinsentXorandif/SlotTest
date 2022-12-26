@@ -13,8 +13,6 @@ Button::Button(const char* fileName, int x, int y, int width, int height, SDL_Re
 	objectWidth = width;
 	objectHeight = height;
 
-	//srcRect = { 0,0,0,0 };
-
 	destRect = { xPos,yPos,objectWidth,objectHeight };
 
 	loadSpriteSheet(objTexture);
@@ -58,31 +56,23 @@ bool Button::Handle_events(bool& isRunning)
 
 	bool rezult = false;
 
-    //The mouse offsets
-    int x = 0, y = 0;
+	int x = 0, y = 0;
 
-    //If a mouse button was pressed
     if (event.type == SDL_MOUSEBUTTONDOWN)
     {
-        //If the left mouse button was pressed
         if (event.button.button == SDL_BUTTON_LEFT)
         {
-            //Get the mouse offsets
             x = event.button.x;
             y = event.button.y;
 
-            //If the mouse is over the button
             if ((x > xPos) && (x < xPos + objectWidth) && (y > yPos) && (y < yPos + objectHeight))
             {
-				printf("Mouse!!!");
+				printf("Mouse!!!\n");
 				rezult = true;
-                
             }
         }
     }
-
 	return rezult;
-
 }
 
 

@@ -28,6 +28,9 @@ void AnimatedObject::Update()
 
 void AnimatedObject::Render() 
 {
+
+	//printf("AnimatedObject frame = %d, maxSpriteClips = %d\n", frame, maxSpriteClips);
+
 	currClip = &gSpriteClips[frame / maxSpriteClips];
 
 	SDL_RenderCopy(gameRenderer, objTexture, currClip, &destRect);

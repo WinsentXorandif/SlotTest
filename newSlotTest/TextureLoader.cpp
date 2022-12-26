@@ -19,8 +19,6 @@ SDL_Texture* TextureLoader::LoadTexture(SDL_Renderer* renderer,const char* filen
 
 SDL_Texture* TextureLoader::loadTTF(SDL_Renderer* renderer,std::string text, SDL_Color textColor, TTF_Font* font)
 {
-
-    //Render text surface
     SDL_Surface* textSurface = TTF_RenderText_Solid(font, text.c_str(), textColor);
 
     SDL_Texture* gTextTexture = nullptr;
@@ -31,19 +29,14 @@ SDL_Texture* TextureLoader::loadTTF(SDL_Renderer* renderer,std::string text, SDL
     }
     else
     {
-        //Create texture from surface pixels
         gTextTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
 
         if (gTextTexture == NULL)
         {
             printf("Unable to create texture from rendered text! SDL Error: %s\n", SDL_GetError());
         }
-
-
-        //Get rid of old surface
         SDL_FreeSurface(textSurface);
     }
 
-    //Return success
     return gTextTexture;
 }
