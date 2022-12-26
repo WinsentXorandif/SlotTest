@@ -11,5 +11,7 @@ public:
 
 	virtual void Render();
 
+	virtual void Render(int index);
+
 };
 

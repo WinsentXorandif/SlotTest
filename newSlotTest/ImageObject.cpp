@@ -22,6 +22,11 @@ void ImageObject::Update()
 	
 }
 
+void ImageObject::Render(int index)
+{
+}
+
+
 void ImageObject::Render()
 {
 	

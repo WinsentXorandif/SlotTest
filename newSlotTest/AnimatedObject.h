@@ -13,6 +13,8 @@ public:
 
 	virtual void Render();
 
+	virtual void Render(int index);
+
 	void Animate(bool isToAnimate) { isAnimated = isToAnimate; };
 
 private:

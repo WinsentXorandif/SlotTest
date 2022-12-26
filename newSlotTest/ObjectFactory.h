@@ -40,6 +40,11 @@ public:
 
 
 private:
+
+	int index = 0;
+
+	int maxSpriteClips = 0;
+
 	TTF_Font* gameFont;
 
 	SDL_Color textColor = { 0, 0, 0 };

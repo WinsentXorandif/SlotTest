@@ -76,6 +76,10 @@ bool Button::Handle_events(bool& isRunning)
 }
 
 
+void Button::Render(int index)
+{
+}
+
 
 void Button::Render()
 {

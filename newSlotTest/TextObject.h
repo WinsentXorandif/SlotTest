@@ -11,6 +11,8 @@ public:
 
 	virtual void Render();
 
+	virtual void Render(int index);
+
 	void ChangeText(std::string newText);
 
 private:

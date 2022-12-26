@@ -24,6 +24,11 @@ void TextObject::Update()
 	
 }
 
+void TextObject::Render(int index)
+{
+}
+
+
 void TextObject::Render()
 {
 	SDL_RenderCopy(gameRenderer, objTexture, NULL, &destRect);

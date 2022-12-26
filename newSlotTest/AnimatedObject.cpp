@@ -2,7 +2,7 @@
 #include "TextureLoader.h"
 #include <stdlib.h>
 
-AnimatedObject::AnimatedObject(const char* fileName, int x, int y, int width, int height, int SpriteClips, int ssRows,SDL_Renderer* renderer)
+AnimatedObject::AnimatedObject(const char* fileName, int x, int y, int width, int height, int SpriteClips, int ssRows, SDL_Renderer* renderer)
 {
 
 	gameRenderer = renderer;
@@ -26,14 +26,28 @@ void AnimatedObject::Update()
 
 }
 
+void AnimatedObject::Render(int index) 
+{
+	//index = index >= maxSpriteClips ? index - maxSpriteClips : index;
+
+	//currClip = &gSpriteClips[frame / maxSpriteClips];
+	currClip = &gSpriteClips[index];
+	SDL_RenderCopy(gameRenderer, objTexture, currClip, &destRect);
+
+}
+
+
 void AnimatedObject::Render() 
 {
 
 	//printf("AnimatedObject frame = %d, maxSpriteClips = %d\n", frame, maxSpriteClips);
 
-	currClip = &gSpriteClips[frame / maxSpriteClips];
+	printf("AnimatedObject::Render()");
 
+	currClip = &gSpriteClips[frame / maxSpriteClips];
 	SDL_RenderCopy(gameRenderer, objTexture, currClip, &destRect);
+
+
 
 	if(isAnimated) 
 	{

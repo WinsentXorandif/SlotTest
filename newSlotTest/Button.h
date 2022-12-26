@@ -14,6 +14,8 @@ public:
 
 	virtual void Update();
 	virtual void Render();
+	virtual void Render(int index);
+
 	bool Handle_events(bool& isRunning);
 
 

@@ -12,6 +12,8 @@ public:
 
 	virtual void Render() = 0;
 
+	virtual void Render(int index) = 0;
+
 protected:
 
 	int xPos = 0;

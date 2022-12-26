@@ -95,6 +95,9 @@ void CasinoSlot::UpdateLoop()
 		timer->stop();
 	}
 
+
+	//objectFactory->AnimateObjects(false);
+
 	objectFactory->UpdateObjects();
 }
 
