@@ -23,7 +23,7 @@ void CasinoSlot::startGame()
 
 	CreditsInCounter = 10;
 
-	printf("Start Game!\n");
+	printf("Start Game! currState = %d\n", currState);
 
 	switch (currState)
 	{

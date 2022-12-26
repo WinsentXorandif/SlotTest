@@ -14,7 +14,7 @@ void ObjectFactory::LoadObjects()
 
     TextUI.insert({ Out, new TextObject("Credits Out: ", 590, 20, 150, 50, textColor, gameFont,gameRenderer) });
 
-    TextUI.insert({ Plays, new TextObject("Plays: ", 750, 450, 150, 50, textColor, gameFont,gameRenderer) });
+    TextUI.insert({ Plays, new TextObject("Plays: ", 750, 50, 150, 50, textColor, gameFont,gameRenderer) });
 
     //-----------------------
 
@@ -35,22 +35,22 @@ void ObjectFactory::LoadObjects()
     maxSpriteClips = 14;
 
     images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 190, 200, 100, 100, 14, 14, gameRenderer));
- //   images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 300, 200, 100, 100, 50, 14, gameRenderer));
- //   images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 410, 200, 100, 100, 50, 14, gameRenderer));
- //   images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 520, 200, 100, 100, 50, 14, gameRenderer));
- //   images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 630, 200, 100, 100, 50, 14, gameRenderer));
+    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 300, 200, 100, 100, 50, 14, gameRenderer));
+    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 410, 200, 100, 100, 50, 14, gameRenderer));
+    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 520, 200, 100, 100, 50, 14, gameRenderer));
+    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 630, 200, 100, 100, 50, 14, gameRenderer));
     
     images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 190, 310, 100, 100, 14, 14, gameRenderer));
-//    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 300, 310, 100, 100, 50, 14, gameRenderer));
-//    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 410, 310, 100, 100, 50, 14, gameRenderer));
-//    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 520, 310, 100, 100, 50, 14, gameRenderer));
-//    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 630, 310, 100, 100, 50, 14, gameRenderer));
+    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 300, 310, 100, 100, 50, 14, gameRenderer));
+    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 410, 310, 100, 100, 50, 14, gameRenderer));
+    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 520, 310, 100, 100, 50, 14, gameRenderer));
+    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 630, 310, 100, 100, 50, 14, gameRenderer));
 
     images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 190, 420, 100, 100, 14, 14, gameRenderer));
-//    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 300, 420, 100, 100, 50, 14, gameRenderer));
-//    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 410, 420, 100, 100, 50, 14, gameRenderer));
-//    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 520, 420, 100, 100, 50, 14, gameRenderer));
-//    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 630, 420, 100, 100, 50, 14, gameRenderer));
+    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 300, 420, 100, 100, 50, 14, gameRenderer));
+    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 410, 420, 100, 100, 50, 14, gameRenderer));
+    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 520, 420, 100, 100, 50, 14, gameRenderer));
+    images.push_back(new AnimatedObject("newSlotTest/Resources/Images/spriteall3.png", 630, 420, 100, 100, 50, 14, gameRenderer));
     
 
     backGround = new ImageObject("newSlotTest/Resources/Images/background2.png", 0, 0, 1280, 800, gameRenderer);
@@ -63,6 +63,10 @@ void ObjectFactory::LoadObjects()
 
 void ObjectFactory::AnimateObjects(bool isAnimate) 
 {
+    IsAnimate = isAnimate;
+
+    printf("AnimateObjects(bool isAnimate) isAnimate = %d\n",isAnimate);
+
     for (auto const& image : images)
     {
         AnimatedObject* animatedObj = dynamic_cast<AnimatedObject*>(image);
@@ -103,14 +107,24 @@ void ObjectFactory::RenderObjects()
     {
         ui.second->Render();
     }
-
-    for(auto const& image : images) 
+    
+    if (!IsAnimate)
     {
-        image->Render(index);
-        index++;
-        index = index >= maxSpriteClips ? 0 : index;
+        for (auto const& image : images)
+        {
+            image->Render();
+        }
     }
 
+    if (IsAnimate) {
+
+        for (auto const& image : images)
+        {
+            image->Render(index);
+            index++;
+            index = index >= maxSpriteClips ? 0 : index;
+        }
+    }
     button->Render();
 }
 

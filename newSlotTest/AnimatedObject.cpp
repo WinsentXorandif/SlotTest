@@ -29,6 +29,7 @@ void AnimatedObject::Update()
 void AnimatedObject::Render(int index) 
 {
 	//index = index >= maxSpriteClips ? index - maxSpriteClips : index;
+	indexPic = index;
 
 	//currClip = &gSpriteClips[frame / maxSpriteClips];
 	currClip = &gSpriteClips[index];
@@ -42,9 +43,7 @@ void AnimatedObject::Render()
 
 	//printf("AnimatedObject frame = %d, maxSpriteClips = %d\n", frame, maxSpriteClips);
 
-	printf("AnimatedObject::Render()");
-
-	currClip = &gSpriteClips[frame / maxSpriteClips];
+	currClip = &gSpriteClips[indexPic];// [frame / maxSpriteClips] ;
 	SDL_RenderCopy(gameRenderer, objTexture, currClip, &destRect);
 
 

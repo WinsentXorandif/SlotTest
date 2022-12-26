@@ -19,6 +19,7 @@ public:
 
 private:
 	
+	int indexPic = 0;
 	int spriteSheetRowsCount = 0;
 	int maxSpriteClips = 0;
 	int frame = 0;

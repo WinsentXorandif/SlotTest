@@ -41,6 +41,8 @@ public:
 
 private:
 
+	bool IsAnimate = false;
+
 	int index = 0;
 
 	int maxSpriteClips = 0;
