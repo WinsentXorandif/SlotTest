@@ -14,7 +14,7 @@ public:
 
 	virtual void Update();
 	virtual void Render();
-	void Handle_events();
+	void Handle_events(bool& isRunning);
 
 
 private:

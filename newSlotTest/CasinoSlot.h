@@ -19,6 +19,8 @@ public:
 
 	void startGame();
 
+	void UpdateInput(bool& isRunning);
+
 	void UpdateLoop();
 
 	void renderGameObjects();

@@ -52,6 +52,13 @@ void ObjectFactory::AnimateObjects(bool isAnimate)
     }
 }
 
+
+void ObjectFactory::UpdateMouse(bool& isRunning)
+{
+    button->Handle_events(isRunning);
+}
+
+
 void ObjectFactory::UpdateObjects()
 {
     button->Update();

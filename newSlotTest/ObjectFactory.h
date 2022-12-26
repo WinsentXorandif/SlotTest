@@ -28,6 +28,8 @@ public:
 
 	void AnimateObjects(bool isToAnimate);
 
+	void UpdateMouse(bool& isRunning);
+
 	void UpdateObjects();
 
 	void RenderObjects();

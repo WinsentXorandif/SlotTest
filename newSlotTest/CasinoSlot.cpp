@@ -64,6 +64,12 @@ void CasinoSlot::startGame()
 	
 }
 
+void CasinoSlot::UpdateInput(bool& isRunning)
+{
+	objectFactory->UpdateMouse(isRunning);
+}
+
+
 void CasinoSlot::UpdateLoop()
 {
 	if (timer->getTicks() > loopTime)

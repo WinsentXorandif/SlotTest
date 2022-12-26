@@ -71,7 +71,13 @@ void Game::loadAssets()
 
 void Game::handleEvents() 
 {
-	KeyboardEventHandler::HandleInput(isRunning,*casinoSlot);
+	//KeyboardEventHandler::HandleInput(isRunning,*casinoSlot);
+
+	casinoSlot->UpdateInput(isRunning);
+
+
+
+
 }
 
 void Game::update() 
