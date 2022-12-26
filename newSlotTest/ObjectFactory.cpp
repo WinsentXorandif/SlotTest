@@ -30,6 +30,12 @@ void ObjectFactory::LoadObjects()
 
     images.push_back(new AnimatedObject("newSlotTest/Resources/Images/SS64.png", 510, 300, 64, 64, 50, 15, gameRenderer));
 
+    backGround = new ImageObject("newSlotTest/Resources/Images/background2.png", 0, 0, 1280, 800, gameRenderer);
+
+    button = new Button("newSlotTest/Resources/Images/start33.png", 1000, 280, 256, 115, gameRenderer);
+
+
+
 }
 
 void ObjectFactory::AnimateObjects(bool isAnimate) 
@@ -46,6 +52,13 @@ void ObjectFactory::AnimateObjects(bool isAnimate)
     }
 }
 
+void ObjectFactory::UpdateObjects()
+{
+    button->Update();
+}
+
+
+
 void ObjectFactory::ChangeUIText(UIText uiText,std::string stringValue) 
 {
     TextUI.at(uiText)->ChangeText(stringValue);
@@ -53,6 +66,9 @@ void ObjectFactory::ChangeUIText(UIText uiText,std::string stringValue)
 
 void ObjectFactory::RenderObjects()
 {
+
+    backGround->Render();
+
     for (auto const& ui : TextUI)
     {
         ui.second->Render();
@@ -62,6 +78,8 @@ void ObjectFactory::RenderObjects()
     {
         image->Render();
     }
+
+    button->Render();
 }
 
 void ObjectFactory::CleanObjects()
@@ -75,6 +93,9 @@ void ObjectFactory::CleanObjects()
     {
         delete image;
     }
+
+    delete backGround;
+    delete button;
 
     TextUI.clear();
 

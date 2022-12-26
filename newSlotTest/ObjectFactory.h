@@ -6,6 +6,7 @@
 #include "ImageObject.h"
 #include "TextObject.h"
 #include "AnimatedObject.h"
+#include "Button.h"
 
 
 using namespace std;
@@ -27,6 +28,8 @@ public:
 
 	void AnimateObjects(bool isToAnimate);
 
+	void UpdateObjects();
+
 	void RenderObjects();
 
 	void ChangeUIText(UIText uiEnum, std::string newValue);
@@ -40,6 +43,10 @@ private:
 	SDL_Color textColor = { 0, 0, 0 };
 
 	SDL_Renderer* gameRenderer;
+
+	Button* button;
+
+	GameObject* backGround;
 
 	list<GameObject*> images;
 

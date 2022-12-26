@@ -80,6 +80,8 @@ void CasinoSlot::UpdateLoop()
 
 		timer->stop();
 	}
+
+	objectFactory->UpdateObjects();
 }
 
 void CasinoSlot::modifyCreditsCounter(bool isCreditsIn)

@@ -121,6 +121,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="newSlotTest\AnimatedObject.cpp" />
+    <ClCompile Include="newSlotTest\Button.cpp" />
     <ClCompile Include="newSlotTest\CasinoSlot.cpp" />
     <ClCompile Include="newSlotTest\Game.cpp" />
     <ClCompile Include="newSlotTest\GameObject.cpp" />
@@ -134,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="newSlotTest\AnimatedObject.h" />
+    <ClInclude Include="newSlotTest\Button.h" />
     <ClInclude Include="newSlotTest\CasinoSlot.h" />
     <ClInclude Include="newSlotTest\Game.h" />
     <ClInclude Include="newSlotTest\GameObject.h" />

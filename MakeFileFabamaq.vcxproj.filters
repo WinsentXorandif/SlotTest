@@ -48,6 +48,9 @@
     <ClCompile Include="newSlotTest\Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="newSlotTest\Button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="newSlotTest\AnimatedObject.h">
@@ -81,6 +84,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="newSlotTest\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="newSlotTest\Button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
