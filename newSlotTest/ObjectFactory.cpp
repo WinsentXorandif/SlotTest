@@ -129,7 +129,7 @@ void ObjectFactory::AnimateObjects(bool isAnimate)
     printf("AnimateObjects(bool isAnimate) isAnimate = %d\n",isAnimate);
 
 
-
+    /*
     for (auto const& image : images)
     {
         AnimatedObject* animatedObj = dynamic_cast<AnimatedObject*>(image);
@@ -140,6 +140,30 @@ void ObjectFactory::AnimateObjects(bool isAnimate)
             animatedObj->Animate(isAnimate);
         }
     }
+    */
+
+    for (int i = 0; i < imagesMap.size(); i++)
+    {
+
+        for (auto const& image : imagesMap[i])
+        {
+            AnimatedObject* animatedObj = dynamic_cast<AnimatedObject*>(image);
+            if (animatedObj != nullptr)
+            {
+
+                animatedObj->Animate(isAnimate);
+            }
+
+
+            //image->Render(index);
+            //index++;
+            //index = index >= maxSpriteClips ? 0 : index;
+        }
+
+    }
+
+
+
 
 
 }
@@ -192,7 +216,7 @@ void ObjectFactory::RenderObjects(int num)
 
     //}
 
-    if (IsAnimate) {
+    //if (IsAnimate) {
 
         /*
         for (auto const& image : images)
@@ -208,13 +232,14 @@ void ObjectFactory::RenderObjects(int num)
 
             for (auto const& image : imagesMap[i])
             {
+                
                 image->Render(index);
                 index++;
                 index = index >= maxSpriteClips ? 0 : index;
             }
         }
 
-    }
+    //}
     button->Render();
 }
 
