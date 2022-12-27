@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include "ObjectFactory.h"
 #include "CasinoSlot.h"
-#include "KeyboardEventHandler.h"
+
 
 class Game
 {
@@ -39,6 +39,7 @@ private:
 	SDL_Renderer* renderer = nullptr;
 	
 #pragma region Variables for the FPS limit
+	
 	const int FPS = 80;
 
 	const int frameDelay = 1000 / FPS;
@@ -46,6 +47,7 @@ private:
 	Uint32 frameStart = 0;
 
 	float frameDeltaTime = 0;
+	
 #pragma endregion Variables for the FPS limit
 
 };

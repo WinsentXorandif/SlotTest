@@ -30,9 +30,6 @@
     <ClCompile Include="newSlotTest\ImageObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="newSlotTest\KeyboardEventHandler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="newSlotTest\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -66,12 +63,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="newSlotTest\ImageObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="newSlotTest\KeyboardEventHandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="newSlotTest\KeyPresses.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="newSlotTest\ObjectFactory.h">

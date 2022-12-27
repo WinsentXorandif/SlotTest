@@ -32,9 +32,9 @@ void CasinoSlot::startGame()
 		if(CreditsInCounter > 0) 
 		{
 			currState = Running;
-			CreditsInCounter--;
+			//CreditsInCounter--;
 
-			objectFactory->ChangeUIText(In, to_string(CreditsInCounter));
+			//objectFactory->ChangeUIText(In, to_string(CreditsInCounter));
 			objectFactory->AnimateObjects(true);
 
 			timer->start();
@@ -91,7 +91,7 @@ void CasinoSlot::UpdateLoop()
 
 		PlaysCounter++;
 
-		objectFactory->ChangeUIText(Plays, to_string(PlaysCounter));
+		//objectFactory->ChangeUIText(Plays, to_string(PlaysCounter));
 
 		objectFactory->AnimateObjects(false);
 
@@ -110,9 +110,12 @@ void CasinoSlot::UpdateLoop()
 		timerSlot = 0;
 	}
 
+	objectFactory->ChangeUIText(to_string(80));
+
 	objectFactory->BlinkMouse();
 }
 
+/*
 void CasinoSlot::modifyCreditsCounter(bool isCreditsIn)
 {
 	if(isCreditsIn) 
@@ -129,7 +132,7 @@ void CasinoSlot::modifyCreditsCounter(bool isCreditsIn)
 
 	objectFactory->ChangeUIText(In, to_string(CreditsInCounter));
 }
-
+*/
 void CasinoSlot::renderGameObjects() 
 {
 	objectFactory->RenderObjects(numbelSlot);

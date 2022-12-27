@@ -27,7 +27,7 @@ public:
 
 	void renderGameObjects();
 
-	void modifyCreditsCounter(bool isCreditsIn);
+	//void modifyCreditsCounter(bool isCreditsIn);
 
 
 private:

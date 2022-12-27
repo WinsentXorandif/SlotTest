@@ -10,11 +10,13 @@ ObjectFactory::ObjectFactory(SDL_Renderer* renderer, TTF_Font* font)
 
 void ObjectFactory::LoadObjects()
 {
-	TextUI.insert({ In, new TextObject("Credits In: ", 10, 20, 150, 50, textColor, gameFont,gameRenderer) });
+	TextUI.insert({ In, new TextObject ("Credits In: ", 10, 700, 150, 150, textColor, gameFont,gameRenderer) });
 
-	TextUI.insert({ Out, new TextObject("Credits Out: ", 590, 20, 150, 50, textColor, gameFont,gameRenderer) });
+	TextUI.insert({ Out, new TextObject("Credits Out: ", 130, 700, 150, 150, textColor, gameFont,gameRenderer) });
 
-	TextUI.insert({ Plays, new TextObject("Plays: ", 750, 50, 150, 50, textColor, gameFont,gameRenderer) });
+	TextUI.insert({ Plays, new TextObject("Plays: ", 440, 500, 150, 150, textColor, gameFont,gameRenderer) });
+
+	TestFPS = new TextObject("GameFPS: ", 10, 10, 100, 50, textColor, gameFont, gameRenderer);
 
 
 	maxSpriteClips = 14;
@@ -94,9 +96,10 @@ void ObjectFactory::BlinkMouse()
 
 
 
-void ObjectFactory::ChangeUIText(UIText uiText, std::string stringValue)
+void ObjectFactory::ChangeUIText(std::string stringValue)
 {
-	TextUI.at(uiText)->ChangeText(stringValue);
+	//TextUI.at(uiText)->ChangeText(stringValue);
+	TestFPS->ChangeText(stringValue);
 }
 
 void ObjectFactory::RenderObjects(int num)
@@ -104,10 +107,14 @@ void ObjectFactory::RenderObjects(int num)
 
 	backGround->Render();
 
-	for (auto const& ui : TextUI)
-	{
-		ui.second->Render();
-	}
+	TestFPS->Render();
+
+	//for (auto const& ui : TextUI)
+	//{
+	//	ui.second->Render();
+		//TestFPS->Render();
+	//}
+
 
 	for (int i = 0; i < imagesMap.size(); i++)
 	{
@@ -142,6 +149,7 @@ void ObjectFactory::CleanObjects()
 		delete image;
 	}
 
+	delete TestFPS;
 	delete backGround;
 	delete button;
 

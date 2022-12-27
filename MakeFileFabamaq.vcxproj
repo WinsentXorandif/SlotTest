@@ -126,7 +126,6 @@
     <ClCompile Include="newSlotTest\Game.cpp" />
     <ClCompile Include="newSlotTest\GameObject.cpp" />
     <ClCompile Include="newSlotTest\ImageObject.cpp" />
-    <ClCompile Include="newSlotTest\KeyboardEventHandler.cpp" />
     <ClCompile Include="newSlotTest\main.cpp" />
     <ClCompile Include="newSlotTest\ObjectFactory.cpp" />
     <ClCompile Include="newSlotTest\TextObject.cpp" />
@@ -140,8 +139,6 @@
     <ClInclude Include="newSlotTest\Game.h" />
     <ClInclude Include="newSlotTest\GameObject.h" />
     <ClInclude Include="newSlotTest\ImageObject.h" />
-    <ClInclude Include="newSlotTest\KeyboardEventHandler.h" />
-    <ClInclude Include="newSlotTest\KeyPresses.h" />
     <ClInclude Include="newSlotTest\ObjectFactory.h" />
     <ClInclude Include="newSlotTest\TextObject.h" />
     <ClInclude Include="newSlotTest\TextureLoader.h" />

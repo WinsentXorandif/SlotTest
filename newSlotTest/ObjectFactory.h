@@ -34,7 +34,7 @@ public:
 
 	void RenderObjects(int num);
 
-	void ChangeUIText(UIText uiEnum, std::string newValue);
+	void ChangeUIText(std::string newValue);
 
 	void CleanObjects();
 
@@ -63,6 +63,8 @@ private:
 
 	list<GameObject*> imagesList;
 	map<int, list<GameObject*>> imagesMap;
+
+	TextObject* TestFPS;
 
 	map<UIText, TextObject*> TextUI;
 };
