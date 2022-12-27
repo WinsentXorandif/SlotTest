@@ -80,9 +80,13 @@ void CasinoSlot::UpdateInput(bool& isRunning)
 
 void CasinoSlot::UpdateLoop()
 {
-	if (timer->getTicks() > loopTime)
+
+
+	if (timer->getTicks() > LOOP_TIME)
 	{
 		printf("Passed the 5 seconds");
+
+		numbelSlot = 0;
 
 		currState = Stopped;
 
@@ -96,9 +100,18 @@ void CasinoSlot::UpdateLoop()
 	}
 
 
-	//objectFactory->AnimateObjects(false);
+	timerSlot += timer->getTicks();
 
-	objectFactory->UpdateObjects();
+	if (timerSlot >= MAX_BAR_TIMER)
+	{
+		if (numbelSlot < objectFactory->GetMAxSlot())
+		{
+			numbelSlot++;
+		}
+		timerSlot = 0;
+	}
+
+	objectFactory->BlinkMouse();
 }
 
 void CasinoSlot::modifyCreditsCounter(bool isCreditsIn)
@@ -120,10 +133,5 @@ void CasinoSlot::modifyCreditsCounter(bool isCreditsIn)
 
 void CasinoSlot::renderGameObjects() 
 {
-
-	//int numbelBar = 0;
-	//float timer = 0.0f;
-
-
 	objectFactory->RenderObjects(numbelSlot);
 }

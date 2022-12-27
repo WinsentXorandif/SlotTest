@@ -9,7 +9,8 @@ enum GameState
 	Paused
 };
 
-const float MAX_BAR_TIMER = 1.0f;
+const int MAX_BAR_TIMER = 50000;
+const int LOOP_TIME = 5000;
 
 class CasinoSlot
 {
@@ -31,15 +32,13 @@ public:
 
 private:
 
+	int timerSlot = 0;
 	int numbelSlot = 0;
-	float timerSlot = 0.0f;
 
 	GameState currState = Stopped;
 	int CreditsInCounter = 0;
 	int CreditsOutCounter = 0;
 	int PlaysCounter = 0;
-
-	int loopTime = 5000;
 
 	ObjectFactory* objectFactory = nullptr;
 	Timer* timer = nullptr;

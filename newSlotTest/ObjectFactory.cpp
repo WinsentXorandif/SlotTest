@@ -124,9 +124,11 @@ void ObjectFactory::LoadObjects()
 
 void ObjectFactory::AnimateObjects(bool isAnimate) 
 {
-    IsAnimate = isAnimate;
+    //IsAnimate = isAnimate;
 
     printf("AnimateObjects(bool isAnimate) isAnimate = %d\n",isAnimate);
+
+
 
     for (auto const& image : images)
     {
@@ -138,6 +140,8 @@ void ObjectFactory::AnimateObjects(bool isAnimate)
             animatedObj->Animate(isAnimate);
         }
     }
+
+
 }
 
 
@@ -147,7 +151,7 @@ bool ObjectFactory::UpdateMouse(bool& isRunning)
 }
 
 
-void ObjectFactory::UpdateObjects()
+void ObjectFactory::BlinkMouse()
 {
     button->Update();
 }
@@ -199,15 +203,16 @@ void ObjectFactory::RenderObjects(int num)
         }
         */
 
-       // for (int i = 0; i < imagesMap.size(); i++)
-       // {
-            for (auto const& image : imagesMap[num])
+        for (int i = 0; i < num; i++)
+        {
+
+            for (auto const& image : imagesMap[i])
             {
                 image->Render(index);
                 index++;
                 index = index >= maxSpriteClips ? 0 : index;
             }
-       // }
+        }
 
     }
     button->Render();

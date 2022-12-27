@@ -30,7 +30,7 @@ public:
 
 	bool UpdateMouse(bool& isRunning);
 
-	void UpdateObjects();
+	void BlinkMouse();
 
 	void RenderObjects(int num);
 
@@ -38,10 +38,14 @@ public:
 
 	void CleanObjects();
 
+	int GetMAxSlot() {
+		return imagesMap.size();
+	}
+
 
 private:
 
-	bool IsAnimate = false;
+	//bool IsAnimate = false;
 
 	int index = 0;
 
