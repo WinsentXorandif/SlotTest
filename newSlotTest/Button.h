@@ -6,7 +6,7 @@ const int MAX_CLIPS = 2;
 const float MAX_TIMER = 1.0f;
 
 class Button :
-    public GameObject
+	public GameObject
 {
 public:
 

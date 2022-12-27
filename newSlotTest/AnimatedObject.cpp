@@ -18,15 +18,15 @@ AnimatedObject::AnimatedObject(const char* fileName, int x, int y, int width, in
 	maxSpriteClips = SpriteClips;
 	spriteSheetRowsCount = ssRows;
 
-	loadSpriteSheet(objTexture);	
+	loadSpriteSheet(objTexture);
 }
 
-void AnimatedObject::Update() 
+void AnimatedObject::Update()
 {
 
 }
 
-void AnimatedObject::Render(int index) 
+void AnimatedObject::Render(int index)
 {
 	indexPic = index;
 	currClip = &gSpriteClips[index];
@@ -34,13 +34,13 @@ void AnimatedObject::Render(int index)
 }
 
 
-void AnimatedObject::Render() 
+void AnimatedObject::Render()
 {
 	currClip = &gSpriteClips[indexPic];// [frame / maxSpriteClips] ;
 	SDL_RenderCopy(gameRenderer, objTexture, currClip, &destRect);
 
 	/*
-	if(isAnimated) 
+	if(isAnimated)
 	{
 		frame++;
 		if (frame / maxSpriteClips >= maxSpriteClips)
@@ -51,9 +51,9 @@ void AnimatedObject::Render()
 	*/
 }
 
-void AnimatedObject::loadSpriteSheet(SDL_Texture* texture) 
+void AnimatedObject::loadSpriteSheet(SDL_Texture* texture)
 {
-	if(texture == nullptr) 
+	if (texture == nullptr)
 	{
 		printf("Invalid Texture!");
 		return;
@@ -68,7 +68,7 @@ void AnimatedObject::loadSpriteSheet(SDL_Texture* texture)
 	int nextFrameHeight = 0;
 	int spriteRow = 0;
 
-	for(int i = 0; i < maxSpriteClips;i++) 
+	for (int i = 0; i < maxSpriteClips; i++)
 	{
 		gSpriteClips[i].x = nextFrameWidth;
 		gSpriteClips[i].y = nextFrameHeight;
@@ -79,7 +79,7 @@ void AnimatedObject::loadSpriteSheet(SDL_Texture* texture)
 
 		spriteRow++;
 
-		if(spriteRow >= spriteSheetRowsCount) 
+		if (spriteRow >= spriteSheetRowsCount)
 		{
 			nextFrameWidth = 0;
 			nextFrameHeight += objectHeight;

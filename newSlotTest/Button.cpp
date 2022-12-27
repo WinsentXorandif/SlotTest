@@ -40,38 +40,37 @@ void Button::Update()
 
 bool Button::Handle_events(bool& isRunning)
 {
-    SDL_Event event;
+	SDL_Event event;
 
-    SDL_PollEvent(&event);
+	SDL_PollEvent(&event);
 
-    switch (event.type)
-    {
+	switch (event.type)
+	{
 
-    case SDL_QUIT:
-        isRunning = false;
+	case SDL_QUIT:
+		isRunning = false;
 
-    default:
-        break;
-    }
+	default:
+		break;
+	}
 
 	bool rezult = false;
 
 	int x = 0, y = 0;
 
-    if (event.type == SDL_MOUSEBUTTONDOWN)
-    {
-        if (event.button.button == SDL_BUTTON_LEFT)
-        {
-            x = event.button.x;
-            y = event.button.y;
+	if (event.type == SDL_MOUSEBUTTONDOWN)
+	{
+		if (event.button.button == SDL_BUTTON_LEFT)
+		{
+			x = event.button.x;
+			y = event.button.y;
 
-            if ((x > xPos) && (x < xPos + objectWidth) && (y > yPos) && (y < yPos + objectHeight))
-            {
-				printf("Mouse!!!\n");
+			if ((x > xPos) && (x < xPos + objectWidth) && (y > yPos) && (y < yPos + objectHeight))
+			{
 				rezult = true;
-            }
-        }
-    }
+			}
+		}
+	}
 	return rezult;
 }
 
@@ -101,7 +100,7 @@ void Button::loadSpriteSheet(SDL_Texture* texture)
 	}
 
 
-	int x = 0; 
+	int x = 0;
 	int y = 0;
 
 	for (int i = 0; i < MAX_CLIPS; i++)

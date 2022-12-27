@@ -38,7 +38,7 @@ public:
 
 private:
 
-	//bool IsAnimate = false;
+	bool IsAnimate = false;
 
 	int index = 0;
 

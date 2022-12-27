@@ -1,7 +1,7 @@
 #include "Game.h"
 
 
-Game::Game() 
+Game::Game()
 {
 	casinoSlot = new CasinoSlot();
 }
@@ -52,7 +52,7 @@ void Game::init(const char* title, int xPosition, int yPosition, int width, int 
 		isRunning = true;
 	}
 
-	if(TTF_Init() == -1) 
+	if (TTF_Init() == -1)
 	{
 		printf("SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError());
 		isRunning = false;
@@ -62,35 +62,35 @@ void Game::init(const char* title, int xPosition, int yPosition, int width, int 
 	loadAssets();
 }
 
-void Game::loadAssets() 
+void Game::loadAssets()
 {
 	gameFont = TTF_OpenFont("newSlotTest/Resources/Fonts/editundo.ttf", 50);
-	casinoSlot->loadGameObjects(renderer,gameFont);
+	casinoSlot->loadGameObjects(renderer, gameFont);
 	printf("Assets are loaded!\n");
 }
 
-void Game::handleEvents() 
+void Game::handleEvents()
 {
 	casinoSlot->UpdateInput(isRunning);
 }
 
-void Game::update() 
+void Game::update()
 {
 	casinoSlot->UpdateLoop();
 }
 
-void Game::render() 
+void Game::render()
 {
 	SDL_RenderClear(renderer);
 
 	casinoSlot->renderGameObjects();
-	
+
 	SDL_RenderPresent(renderer);
 }
 
-void Game::limitFrameRate(bool isFrameStart) 
+void Game::limitFrameRate(bool isFrameStart)
 {
-	if(isFrameStart) 
+	if (isFrameStart)
 	{
 		frameStart = SDL_GetTicks();
 	}
@@ -98,14 +98,14 @@ void Game::limitFrameRate(bool isFrameStart)
 	{
 		frameDeltaTime = SDL_GetTicks() - frameStart;
 
-		if(frameDelay > frameDeltaTime) 
+		if (frameDelay > frameDeltaTime)
 		{
 			SDL_Delay(frameDelay - frameDeltaTime);
 		}
 	}
 }
 
-void Game::clean() 
+void Game::clean()
 {
 	SDL_DestroyWindow(gWindow);
 

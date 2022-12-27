@@ -51,12 +51,12 @@ void ObjectFactory::LoadObjects()
 	imagesMap.insert({ 4, imagesList });
 
 	backGround = new ImageObject("newSlotTest/Resources/Images/background2.png", 0, 0, 1280, 800, gameRenderer);
-	button = new Button("newSlotTest/Resources/Images/start33.png", 900, 280, 256, 115, gameRenderer);
+	button = new Button("newSlotTest/Resources/Images/start33.png", 800, 280, 256, 115, gameRenderer);
 }
 
 void ObjectFactory::AnimateObjects(bool isAnimate)
 {
-	//IsAnimate = isAnimate;
+	IsAnimate = isAnimate;
 
 	printf("AnimateObjects(bool isAnimate) isAnimate = %d\n", isAnimate);
 
@@ -106,7 +106,7 @@ void ObjectFactory::RenderObjects(int num)
 			image->Render();
 		}
 	}
-
+	//if (IsAnimate) {
 	for (int i = 0; i < num; i++)
 	{
 		for (auto const& image : imagesMap[i])
@@ -116,6 +116,8 @@ void ObjectFactory::RenderObjects(int num)
 			index = index >= maxSpriteClips ? 0 : index;
 		}
 	}
+	//}
+
 	button->Render();
 }
 
@@ -129,8 +131,6 @@ void ObjectFactory::CleanObjects()
 	delete TestFPS;
 	delete backGround;
 	delete button;
-
-	//TextUI.clear();
 
 	imagesMap.clear();
 

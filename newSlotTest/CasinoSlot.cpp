@@ -1,6 +1,6 @@
 #include "CasinoSlot.h"
 
-CasinoSlot::~CasinoSlot() 
+CasinoSlot::~CasinoSlot()
 {
 	objectFactory->CleanObjects();
 
@@ -11,30 +11,25 @@ CasinoSlot::~CasinoSlot()
 
 void CasinoSlot::loadGameObjects(SDL_Renderer* renderer, TTF_Font* textFont)
 {
-	objectFactory = new ObjectFactory(renderer,textFont);
+	objectFactory = new ObjectFactory(renderer, textFont);
 
 	timer = new Timer();
 
 	objectFactory->LoadObjects();
 }
 
-void CasinoSlot::startGame() 
+void CasinoSlot::startGame()
 {
-
 	CreditsInCounter = 10;
-
-	printf("Start Game! currState = %d\n", currState);
 
 	switch (currState)
 	{
 	case Stopped:
 
-		if(CreditsInCounter > 0) 
+		if (CreditsInCounter > 0)
 		{
 			currState = Running;
 			//CreditsInCounter--;
-
-			//objectFactory->ChangeUIText(In, to_string(CreditsInCounter));
 			objectFactory->AnimateObjects(true);
 
 			timer->start();
@@ -66,12 +61,12 @@ void CasinoSlot::startGame()
 		break;
 	}
 
-	
+
 }
 
 void CasinoSlot::UpdateInput(bool& isRunning)
 {
-	if (objectFactory->UpdateMouse(isRunning)) 
+	if (objectFactory->UpdateMouse(isRunning))
 	{
 		startGame();
 	}
@@ -121,7 +116,7 @@ void CasinoSlot::UpdateLoop()
 	countedFrames++;
 }
 
-void CasinoSlot::renderGameObjects() 
+void CasinoSlot::renderGameObjects()
 {
 	objectFactory->RenderObjects(numbelSlot);
 }

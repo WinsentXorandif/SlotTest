@@ -5,7 +5,7 @@ ImageObject::ImageObject(const char* fileName, int x, int y, int width, int heig
 {
 	gameRenderer = renderer;
 
-	objTexture = TextureLoader::LoadTexture(gameRenderer,fileName);
+	objTexture = TextureLoader::LoadTexture(gameRenderer, fileName);
 
 	xPos = x;
 	yPos = y;
@@ -13,13 +13,13 @@ ImageObject::ImageObject(const char* fileName, int x, int y, int width, int heig
 	objectHeight = height;
 
 	srcRect = { 0,0,0,0 };
-	destRect = {xPos,yPos,objectWidth,objectHeight};
-	
+	destRect = { xPos,yPos,objectWidth,objectHeight };
+
 }
 
 void ImageObject::Update()
 {
-	
+
 }
 
 void ImageObject::Render(int index)
@@ -29,6 +29,6 @@ void ImageObject::Render(int index)
 
 void ImageObject::Render()
 {
-	
+
 	SDL_RenderCopy(gameRenderer, objTexture, NULL, &destRect);
 }

@@ -7,7 +7,7 @@ class AnimatedObject : public GameObject
 
 public:
 
-	AnimatedObject(const char* fileName, int x, int y, int width, int height, int maxSpriteClip,int spriteSheetRows,SDL_Renderer* renderer);
+	AnimatedObject(const char* fileName, int x, int y, int width, int height, int maxSpriteClip, int spriteSheetRows, SDL_Renderer* renderer);
 
 	virtual void Update();
 
@@ -18,7 +18,7 @@ public:
 	void Animate(bool isToAnimate) { isAnimated = isToAnimate; };
 
 private:
-	
+
 	int indexPic = 0;
 	int spriteSheetRowsCount = 0;
 	int maxSpriteClips = 0;

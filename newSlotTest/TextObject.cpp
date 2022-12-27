@@ -1,13 +1,13 @@
 #include "TextObject.h"
 #include "TextureLoader.h"
 
-TextObject::TextObject(std::string text, int x, int y, int width, int height,SDL_Color color, TTF_Font* font, SDL_Renderer* renderer)
+TextObject::TextObject(std::string text, int x, int y, int width, int height, SDL_Color color, TTF_Font* font, SDL_Renderer* renderer)
 {
 
 	defaultText = text;
 	gameRenderer = renderer;
 
-	objTexture = TextureLoader::loadTTF(gameRenderer,defaultText + "0", color, font);
+	objTexture = TextureLoader::loadTTF(gameRenderer, defaultText + "0", color, font);
 
 	xPos = x;
 	yPos = y;
@@ -21,7 +21,7 @@ TextObject::TextObject(std::string text, int x, int y, int width, int height,SDL
 
 void TextObject::Update()
 {
-	
+
 }
 
 void TextObject::Render(int index)
