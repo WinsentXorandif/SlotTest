@@ -61,8 +61,6 @@ private:
 
 	GameObject* backGround;
 
-	list<GameObject*> images;
-
 	list<GameObject*> imagesList;
 	map<int, list<GameObject*>> imagesMap;
 

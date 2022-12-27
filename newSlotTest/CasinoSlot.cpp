@@ -81,7 +81,6 @@ void CasinoSlot::UpdateInput(bool& isRunning)
 void CasinoSlot::UpdateLoop()
 {
 
-
 	if (timer->getTicks() > LOOP_TIME)
 	{
 		printf("Passed the 5 seconds");

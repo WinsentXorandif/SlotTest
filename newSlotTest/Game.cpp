@@ -82,26 +82,13 @@ void Game::handleEvents()
 
 void Game::update() 
 {
-
 	casinoSlot->UpdateLoop();
-
-	/*
-	timer += frameDeltaTime / 1000;
-
-	if (timer >= MAX_BAR_TIMER)
-	{
-		numbelBar++;
-		timer = 0;
-	}
-	*/
-
 }
 
 void Game::render() 
 {
 	SDL_RenderClear(renderer);
 
-	//Render text
 	casinoSlot->renderGameObjects();
 	
 	SDL_RenderPresent(renderer);

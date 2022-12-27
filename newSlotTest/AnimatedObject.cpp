@@ -28,35 +28,27 @@ void AnimatedObject::Update()
 
 void AnimatedObject::Render(int index) 
 {
-	//index = index >= maxSpriteClips ? index - maxSpriteClips : index;
 	indexPic = index;
-
-	//currClip = &gSpriteClips[frame / maxSpriteClips];
 	currClip = &gSpriteClips[index];
 	SDL_RenderCopy(gameRenderer, objTexture, currClip, &destRect);
-
 }
 
 
 void AnimatedObject::Render() 
 {
-
-	//printf("AnimatedObject frame = %d, maxSpriteClips = %d\n", frame, maxSpriteClips);
-
 	currClip = &gSpriteClips[indexPic];// [frame / maxSpriteClips] ;
 	SDL_RenderCopy(gameRenderer, objTexture, currClip, &destRect);
 
-
-
+	/*
 	if(isAnimated) 
 	{
 		frame++;
-
 		if (frame / maxSpriteClips >= maxSpriteClips)
 		{
 			frame = 0;
 		}
 	}
+	*/
 }
 
 void AnimatedObject::loadSpriteSheet(SDL_Texture* texture) 
