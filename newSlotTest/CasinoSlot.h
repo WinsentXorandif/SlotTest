@@ -9,6 +9,7 @@ enum GameState
 	Paused
 };
 
+const float MAX_BAR_TIMER = 1.0f;
 
 class CasinoSlot
 {
@@ -29,6 +30,9 @@ public:
 
 
 private:
+
+	int numbelSlot = 0;
+	float timerSlot = 0.0f;
 
 	GameState currState = Stopped;
 	int CreditsInCounter = 0;

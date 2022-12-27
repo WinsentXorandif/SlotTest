@@ -120,5 +120,10 @@ void CasinoSlot::modifyCreditsCounter(bool isCreditsIn)
 
 void CasinoSlot::renderGameObjects() 
 {
-	objectFactory->RenderObjects();
+
+	//int numbelBar = 0;
+	//float timer = 0.0f;
+
+
+	objectFactory->RenderObjects(numbelSlot);
 }

@@ -32,7 +32,7 @@ public:
 
 	void UpdateObjects();
 
-	void RenderObjects();
+	void RenderObjects(int num);
 
 	void ChangeUIText(UIText uiEnum, std::string newValue);
 
@@ -58,6 +58,9 @@ private:
 	GameObject* backGround;
 
 	list<GameObject*> images;
+
+	list<GameObject*> imagesList;
+	map<int, list<GameObject*>> imagesMap;
 
 	map<UIText, TextObject*> TextUI;
 };

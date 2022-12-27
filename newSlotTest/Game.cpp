@@ -85,6 +85,16 @@ void Game::update()
 
 	casinoSlot->UpdateLoop();
 
+	/*
+	timer += frameDeltaTime / 1000;
+
+	if (timer >= MAX_BAR_TIMER)
+	{
+		numbelBar++;
+		timer = 0;
+	}
+	*/
+
 }
 
 void Game::render() 
@@ -105,11 +115,11 @@ void Game::limitFrameRate(bool isFrameStart)
 	}
 	else
 	{
-		frameTime = SDL_GetTicks() - frameStart;
+		frameDeltaTime = SDL_GetTicks() - frameStart;
 
-		if(frameDelay > frameTime) 
+		if(frameDelay > frameDeltaTime) 
 		{
-			SDL_Delay(frameDelay - frameTime);
+			SDL_Delay(frameDelay - frameDeltaTime);
 		}
 	}
 }

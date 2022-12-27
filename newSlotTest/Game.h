@@ -31,6 +31,7 @@ public:
 	bool running() { return isRunning; };
 
 private:
+
 	bool isRunning = false;
 	SDL_Window* gWindow = nullptr;
 	CasinoSlot* casinoSlot = nullptr;
@@ -44,7 +45,7 @@ private:
 
 	Uint32 frameStart = 0;
 
-	int frameTime = 0;
+	float frameDeltaTime = 0;
 #pragma endregion Variables for the FPS limit
 
 };
