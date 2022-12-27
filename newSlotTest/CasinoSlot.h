@@ -27,13 +27,11 @@ public:
 
 	void renderGameObjects();
 
-	//void modifyCreditsCounter(bool isCreditsIn);
-
-
 private:
 
 	int timerSlot = 0;
 	int numbelSlot = 0;
+	int countedFrames = 0;
 
 	GameState currState = Stopped;
 	int CreditsInCounter = 0;

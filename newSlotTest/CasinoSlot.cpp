@@ -91,8 +91,6 @@ void CasinoSlot::UpdateLoop()
 
 		PlaysCounter++;
 
-		//objectFactory->ChangeUIText(Plays, to_string(PlaysCounter));
-
 		objectFactory->AnimateObjects(false);
 
 		timer->stop();
@@ -110,29 +108,19 @@ void CasinoSlot::UpdateLoop()
 		timerSlot = 0;
 	}
 
-	objectFactory->ChangeUIText(to_string(80));
+	Uint32 avgFPS = countedFrames / (timer->getTicks() / 1000.f);
+	if (avgFPS > 2000000)
+	{
+		avgFPS = 0;
+	}
+
+	objectFactory->ChangeUIText(to_string(avgFPS));
 
 	objectFactory->BlinkMouse();
+
+	countedFrames++;
 }
 
-/*
-void CasinoSlot::modifyCreditsCounter(bool isCreditsIn)
-{
-	if(isCreditsIn) 
-	{
-		CreditsInCounter++;
-	}
-	else
-	{
-		CreditsOutCounter += CreditsInCounter;
-
-		objectFactory->ChangeUIText(Out, to_string(CreditsOutCounter));
-		CreditsInCounter = 0;
-	}
-
-	objectFactory->ChangeUIText(In, to_string(CreditsInCounter));
-}
-*/
 void CasinoSlot::renderGameObjects() 
 {
 	objectFactory->RenderObjects(numbelSlot);

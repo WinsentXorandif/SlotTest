@@ -11,13 +11,6 @@
 
 using namespace std;
 
-enum UIText
-{
-	In,
-	Out,
-	Plays
-};
-
 class ObjectFactory
 {
 public:
@@ -65,7 +58,5 @@ private:
 	map<int, list<GameObject*>> imagesMap;
 
 	TextObject* TestFPS;
-
-	map<UIText, TextObject*> TextUI;
 };
 

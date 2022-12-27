@@ -10,14 +10,7 @@ ObjectFactory::ObjectFactory(SDL_Renderer* renderer, TTF_Font* font)
 
 void ObjectFactory::LoadObjects()
 {
-	TextUI.insert({ In, new TextObject ("Credits In: ", 10, 700, 150, 150, textColor, gameFont,gameRenderer) });
-
-	TextUI.insert({ Out, new TextObject("Credits Out: ", 130, 700, 150, 150, textColor, gameFont,gameRenderer) });
-
-	TextUI.insert({ Plays, new TextObject("Plays: ", 440, 500, 150, 150, textColor, gameFont,gameRenderer) });
-
-	TestFPS = new TextObject("GameFPS: ", 10, 10, 100, 50, textColor, gameFont, gameRenderer);
-
+	TestFPS = new TextObject("GameFPS: ", 10, 10, 200, 50, textColor, gameFont, gameRenderer);
 
 	maxSpriteClips = 14;
 	const char* fileNameSprites = "newSlotTest/Resources/Images/spriteall3.png";
@@ -98,23 +91,13 @@ void ObjectFactory::BlinkMouse()
 
 void ObjectFactory::ChangeUIText(std::string stringValue)
 {
-	//TextUI.at(uiText)->ChangeText(stringValue);
 	TestFPS->ChangeText(stringValue);
 }
 
 void ObjectFactory::RenderObjects(int num)
 {
-
 	backGround->Render();
-
 	TestFPS->Render();
-
-	//for (auto const& ui : TextUI)
-	//{
-	//	ui.second->Render();
-		//TestFPS->Render();
-	//}
-
 
 	for (int i = 0; i < imagesMap.size(); i++)
 	{
@@ -126,7 +109,6 @@ void ObjectFactory::RenderObjects(int num)
 
 	for (int i = 0; i < num; i++)
 	{
-
 		for (auto const& image : imagesMap[i])
 		{
 			image->Render(index);
@@ -139,11 +121,6 @@ void ObjectFactory::RenderObjects(int num)
 
 void ObjectFactory::CleanObjects()
 {
-	for (auto const& ui : TextUI)
-	{
-		delete ui.second;
-	}
-
 	for (auto const& image : imagesList)
 	{
 		delete image;
@@ -153,7 +130,7 @@ void ObjectFactory::CleanObjects()
 	delete backGround;
 	delete button;
 
-	TextUI.clear();
+	//TextUI.clear();
 
 	imagesMap.clear();
 
